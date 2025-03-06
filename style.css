@@ -22,7 +22,85 @@
     padding: 0px;
     box-sizing: border-box;
     /* To see outline of all elements (temp)*/
-    border: 1px solid black;
+    border: 1px solid whitesmoke;
 }
 
 /* add your own style rules here */
+body{
+    background-color: var(--main-col);
+}
+
+
+/* Fixing Nav-Bar */
+header {
+    padding: 10px 20px;
+    background-color: #47c8ff70
+}
+
+nav{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+/* Style logo */
+.nav-logo img{
+    width: 150px;
+    height: auto;
+}
+
+/* Style links */
+.nav-links{
+    list-style: none;
+    display: flex;
+    gap: 20px;
+}
+
+.nav-links li{
+    font-size: x-large;
+    font-weight: bold;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: var(--third-col)
+    
+}
+
+/* Fix logo img */
+header img {
+    width: 150px;
+    height: auto;
+}
+
+/* Active page link style */
+.nav-links .active a {
+    color: var(--accent-col);
+}
+
+/* White on hover */
+.nav-links a:hover {
+    color: var(--zero-col);
+    -webkit-transition: color 0.3s ease;
+    transition: color 0.3s ease;
+}
+
+/* Adding Hero img */
+.hero {
+    background-image: url(img/bridge3.jpg);
+    background-size: cover;
+    background-position-y: -200px;
+    background-repeat: no-repeat;
+    height: 60vh;
+    width: 100%;
+}
+
+/* Making Footer */
+footer{
+    color: var(--zero-col);
+    background-color: var(--secondary-col);
+    justify-items: center;
+    font-size: medium;
+    font-weight: bold;
+    margin: 20px 0px;
+}
