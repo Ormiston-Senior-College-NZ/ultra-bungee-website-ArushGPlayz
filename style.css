@@ -427,6 +427,7 @@ footer {
 
 .infomation-container article {
     flex: 1;
+    margin: 10px;
     min-width: 500px;
     max-width: 30%;
     color: var(--main-col);
@@ -558,6 +559,15 @@ footer {
     justify-content: space-between;
 }
 
+.related-jumps h2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 30px 0px 10px 0px;
+    color: var(--zero-col);
+    font-size: 300%;
+}
+
 .related-jump-img {
     background-color: var(--main-col);
     display: flex;
@@ -581,11 +591,5 @@ footer {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    font-size: 125%;
-}
-
-.jump-button-center h2 {
-    padding-top: 10px;
-    color: var(--zero-col);
     font-size: 125%;
 }
