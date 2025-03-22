@@ -41,49 +41,71 @@
     </main>
 
     <div class="contact-us">
-        <article class="book-now">
+        <!-- Book Now Form -->
+        <form class="book-now" action="submit_booking.php" method="post">
             <h2>Book Now</h2>
             <h4>And Feel The Fall With Ultra Bungee</h4>
-            <p>Your Name</p>
-            <input type="text">
-            <p>Your Email</p>
-            <input type="email">
+            <label for="name">Your Name</label>
+            <input type="text" id="name" name="name" placeholder="Your Name" required>
+
+            <label for="email">Your Email</label>
+            <input type="email" id="email" name="email" placeholder="Your Email" required>
+
             <p>What Jump</p>
             <ul>
                 <li>
-                    Bridge Jump
-                    <input type="radio">
+                    <label>
+                        <input type="radio" name="jump" value="Bridge Jump" required> Bridge Jump
+                    </label>
                 </li>
                 <li>
-                    Canyon Jump
-                    <input type="radio">
+                    <label>
+                        <input type="radio" name="jump" value="Canyon Jump" required> Canyon Jump
+                    </label>
                 </li>
                 <li>
-                    Tower Jump
-                    <input type="radio">
+                    <label>
+                        <input type="radio" name="jump" value="Tower Jump" required> Tower Jump
+                    </label>
                 </li>
             </ul>
-            <p>What Time</p>
-            <input type="datetime-local">
-            <input type="submit">
-        </article>
 
-        <article class="add-review">
+            <label for="time">What Time</label>
+            <input type="datetime-local" id="time" name="time" required>
+            <p id="time-error" style="color: red; display: none;">Please select 10:00am, 12:00pm, or 2:00pm.</p>
+
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
+
+        <!-- Review Form -->
+        <form class="add-review" action="submit_review.php" method="post">
             <h2>Leave a Review</h2>
             <h4>And Share You Experience With Other</h4>
-            <p>Your Name</p>
-            <input type="text">
-            <p>Your Email</p>
-            <input type="email">
-            <p>Rating in stars (1-5)</p>
-            <input type="number">
-            <p>Why that rating</p>
-            <input type="text">
-            <input type="submit">
-        </article>
+
+            <label for="review-name">Your Name</label>
+            <input type="text" id="review-name" name="review-name" placeholder="Your Name" required>
+
+            <label for="review-email">Your Email</label>
+            <input type="email" id="review-email" name="review-email" placeholder="Your Email" required>
+
+            <label for="rating">Rating in stars (1-5)</label>
+            <input type="number" id="rating" name="rating" min="1" max="5" required>
+            <p id="rating-error" style="color: red; display: none;">Please enter a rating between 1 and 5.</p>
+
+            <label for="reason">Why that rating</label>
+            <textarea id="reason" name="reason" placeholder="Tell us more..." rows="4" required></textarea>
+
+            <input type="submit" value="Submit">
+            <input type="reset" value="Reset">
+        </form>
     </div>
 
     <footer>
         <p>@ Ultra Bungee 2019 - Website by Web Makers Inc.</p>
     </footer>
+
+    <script src="script.js"></script>
 </body>
+
+</html>

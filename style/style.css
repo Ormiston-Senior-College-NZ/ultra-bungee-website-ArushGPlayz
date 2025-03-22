@@ -10,7 +10,7 @@
     --main-col: #001F3D;
     --zero-col: #FFFFFF;
     --secondary-col: #47C8FF;
-    --third-col: #A1C4CE;
+    --third-col: #dff8ff;
     --accent-col: #CEFF1F;
 }
 
@@ -19,15 +19,12 @@
 * {
     margin: 0px;
     padding: 0px;
-    box-sizing: border-box;
-    /* To see outline of all elements (temp)*/
-    /* border: 1px solid whitesmoke; */
 }
 
 /* Styling body & fonts */
 body {
-    background-color: var(--main-col);
     font-family: "Nunito Sans";
+    background-color: var(--main-col);
 }
 
 h1,
@@ -52,6 +49,7 @@ p {
 /* Fixing Nav-Bar */
 header {
     padding: 10px 20px;
+
     background-color: #47c8ff70
 }
 
@@ -59,6 +57,7 @@ nav {
     display: flex;
     align-items: center;
     justify-content: space-between;
+
     width: 100%;
 }
 
@@ -70,9 +69,41 @@ nav {
 
 /* Style nav-links */
 .nav-links {
-    list-style: none;
     display: flex;
     gap: 20px;
+
+    list-style: none;
+}
+
+/* Animated underline on hover */
+nav ul li {
+    position: relative;
+}
+
+nav ul li a::after {
+    position: absolute;
+    left: 0;
+    bottom: -5px;
+
+    width: 100%;
+    height: 3px;
+    content: "";
+
+    background-color: var(--zero-col);
+
+    transform: scale3d(0, 1, 1);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+nav ul li a:hover::after {
+    border-radius: 10%;
+
+    transform: scale3d(1, 1, 2);
+}
+
+nav ul li a:hover {
+    color: var(--zero-col);
 }
 
 .nav-links li {
@@ -81,8 +112,8 @@ nav {
 }
 
 .nav-links a {
+    color: var(--third-col);
     text-decoration: none;
-    color: var(--third-col)
 }
 
 /* Fix logo img */
@@ -99,6 +130,7 @@ header img {
 /* White on hover */
 .nav-links a:hover {
     color: var(--zero-col);
+
     -webkit-transition: color 0.3s ease;
     transition: color 0.3s ease;
 }
@@ -106,26 +138,32 @@ header img {
 /* Adding Hero img */
 .hero {
     position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 60vh;
+    width: 100%;
+    border: none;
+
     background-image: url(/img/bridge3.jpg);
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-position-y: -300px;
-    height: 60vh;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border: none;
 }
 
 /* Adding overlay on hero img */
 .hero-overlay {
     position: absolute;
-    text-align: center;
-    color: var(--zero-col);
+
     background-color: #001e3d7c;
+
     font-weight: bold;
+    color: var(--zero-col);
+    text-align: center;
+
+
     padding: 40px 40px;
     border-radius: 50px;
 }
@@ -663,7 +701,7 @@ footer {
     justify-content: center;
 }
 
-.contact-us article {
+.contact-us form {
     flex: 1;
     margin: 20px;
     width: 50%;
@@ -684,7 +722,7 @@ footer {
 
 .contact-us h2,
 .contact-us h4,
-.contact-us p,
+.contact-us label,
 .contact-us input {
     padding: 20px 0 3px 0;
 }
